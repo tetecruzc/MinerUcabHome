@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
+import './App.css';
+import Home from "./pages/Home";
+import Error from "./pages/Error";
+import SingleRoom from "./pages/SingleRoom";
+import Rooms from "./pages/Rooms";
+import Navbar from './components/Navbar';
+import {Route, Switch} from 'react-router-dom';
+
+// pagina de react-router-dom and netlify https://www.slightedgecoder.com/2018/12/18/page-not-found-on-netlify-with-react-router/
+//  pagina de documentacion de react-router-dom https://reacttraining.com/react-router/web/guides/quick-start
+// lo importe en el index.js 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Navbar/>
+    <Switch>
+    <Route  exact path="/" component={Home}></Route> 
+    <Route exact path="/rooms/" component={Rooms}></Route>
+    <Route exact path="/rooms/:nombre" component={SingleRoom}></Route>
+    <Route component={Error}/>
+    </Switch>
+    
+    </>
   );
 }
 
