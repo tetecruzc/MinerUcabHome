@@ -28,7 +28,10 @@ desplegar=()=>{
                         <Link to="/">Home</Link>
                     </li>
                     <li>
-                        <Link to="/rooms">Rooms</Link>
+                        <Link to="/proxima/">Proxima</Link>
+                    </li>
+                    <li>
+                        <Link to="/login/">LogIn</Link>
                     </li>
                 </ul>
             </div>
