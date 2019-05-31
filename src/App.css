@@ -85,6 +85,7 @@ h6 {
   margin: 5px;
 }
 .btn-singup:hover {
+  opacity: 100;
   background: orange;
   color: orange;
 }
