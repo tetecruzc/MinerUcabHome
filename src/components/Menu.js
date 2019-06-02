@@ -11,6 +11,9 @@ import {
 import Account from "./Account";
 import LogOut from "./LogOut";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
+//import logo from "../images/logo.png";
+import { Link } from "react-router-dom";
+import perfil from "../images/perfil.png";
 
 // link de react-icons https://react-icons.netlify.com/#/icons/fa
 export default class Menu extends Component {
