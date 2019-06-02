@@ -32,6 +32,11 @@ export default class Navbar extends Component {
             <li>
               <Link to="/rooms">Rooms</Link>
             </li>
+            <li>
+              <Link to="/login" className="btn-singup">
+                Login
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
