@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import SignUpForm from "../pages/SignUpForm";
 import SignInForm from "../pages/SignInForm";
+import Sesion from "../pages/Sesion";
 
 import "../Login.css";
 
@@ -9,6 +10,7 @@ class Login extends Component {
   render() {
     return (
       <Router basename="/login/">
+        <Route path="/sesion" component={Sesion} />
         <div className="Login">
           <div className="Login__Aside" />
           <div className="Login__Form">
@@ -22,7 +24,7 @@ class Login extends Component {
               </NavLink>
               <NavLink
                 exact
-                to="/"
+                to="/sign-up"
                 activeClassName="PageSwitcher__Item--Active"
                 className="PageSwitcher__Item"
               >
@@ -41,7 +43,7 @@ class Login extends Component {
               o{" "}
               <NavLink
                 exact
-                to="/"
+                to="/sign-up"
                 activeClassName="FormTitle__Link--Active"
                 className="FormTitle__Link"
               >
@@ -49,7 +51,7 @@ class Login extends Component {
               </NavLink>
             </div>
 
-            <Route exact path="/" component={SignUpForm} />
+            <Route exact path="/sign-up" component={SignUpForm} />
             <Route path="/sign-in" component={SignInForm} />
           </div>
         </div>

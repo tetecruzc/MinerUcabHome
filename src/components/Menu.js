@@ -6,13 +6,11 @@ import {
   FaBoxOpen,
   FaHardHat,
   FaBook,
-  FaBars,
-  FaPowerOff
+  FaBars
 } from "react-icons/fa";
 import Account from "./Account";
-import logo from "../images/logo.png";
-import { Link } from "react-router-dom";
-import perfil from "../images/perfil.png";
+import LogOut from "./LogOut";
+import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 
 // link de react-icons https://react-icons.netlify.com/#/icons/fa
 export default class Menu extends Component {
@@ -21,27 +19,33 @@ export default class Menu extends Component {
     option: [
       {
         icon: <FaHome />,
-        title: "Home"
+        title: "Home",
+        tipo: "/home"
       },
       {
         icon: <FaHardHat />,
-        title: "Empleados"
+        title: "Empleados",
+        tipo: "/empleado"
       },
       {
         icon: <FaHammer />,
-        title: "Yacimientos"
+        title: "Yacimientos",
+        tipo: "/yacimiento"
       },
       {
         icon: <FaUser />,
-        title: "Clientes"
+        title: "Clientes",
+        tipo: "/cliente"
       },
       {
         icon: <FaBoxOpen />,
-        title: "Inventario"
+        title: "Inventario",
+        tipo: "/inventario"
       },
       {
         icon: <FaBook />,
-        title: "Información Reelevante"
+        title: "Información Reelevante",
+        tipo: "/info"
       }
     ]
   };
@@ -68,21 +72,16 @@ export default class Menu extends Component {
             <ul>
               {this.state.option.map((item, index) => {
                 return (
-                  <li key={index} isSelect>
-                    <span className="icons">{item.icon}</span>
-                    <span>{item.title}</span>
+                  <li key={index}>
+                    <Link to={item.tipo} className="sidenav-links">
+                      <span className="icons">{item.icon}</span>
+                      <span>{item.title}</span>
+                    </Link>
                   </li>
                 );
               })}
               <Account />
-              <div className="log-out">
-                <span>Log Out</span>
-                <span className="log-btn">
-                  <FaPowerOff>
-                    <Link to="/" />
-                  </FaPowerOff>
-                </span>
-              </div>
+              <LogOut />
             </ul>
           </div>
         </div>

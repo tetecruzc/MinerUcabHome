@@ -22,7 +22,7 @@ body {
 .sidenav {
   position: absolute;
   border-left-color: black;
-  height: 100vh;
+  height: 100%;
   background: #1b1e20;
   z-index: 3;
 }
@@ -43,11 +43,16 @@ body {
 }
 
 .sidenav ul li {
+  text-decoration: none;
   padding: 20px 20px;
   text-align: inline;
   font-size: 15px;
   color: #fff;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.sidenav-links {
+  text-decoration: none;
+  color: #fff;
 }
 .sidenav ul li:hover {
   background: rgb(214, 140, 3);
@@ -137,13 +142,20 @@ body {
     margin: auto;
     text-align: initial;
   }
+
   .sidenav-show {
     width: 250px;
     transition: 0.3s;
   }
+  .sidenav-show ul li a {
+    text-decoration: none;
+  }
   .sidenav-noshow {
     width: 250px;
     transition: 0.3s;
+  }
+  .sidenav-noshow ul li a {
+    text-decoration: none;
   }
   .sidenav-noshow .log-out {
     display: inline;

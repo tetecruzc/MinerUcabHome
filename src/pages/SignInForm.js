@@ -71,8 +71,10 @@ class SignInForm extends Component {
           </div>
 
           <div className="FormField">
-            <button className="FormField__Button mr-20">Iniciar Sesion</button>{" "}
-            <Link to="/" className="FormField__Link">
+            <Link to="/sesion" className="FormField__Button mr-20">
+              Iniciar Sesion
+            </Link>
+            <Link to="/sign-up" className="FormField__Link">
               Crear cuenta
             </Link>
           </div>
