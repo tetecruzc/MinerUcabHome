@@ -6,8 +6,10 @@ import {
   FaBoxOpen,
   FaHardHat,
   FaBook,
-  FaBars
+  FaBars,
+  FaPowerOff
 } from "react-icons/fa";
+import Account from "./Account";
 import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import perfil from "../images/perfil.png";
@@ -66,15 +68,21 @@ export default class Menu extends Component {
             <ul>
               {this.state.option.map((item, index) => {
                 return (
-                  <li key={index}>
+                  <li key={index} isSelect>
                     <span className="icons">{item.icon}</span>
                     <span>{item.title}</span>
                   </li>
                 );
               })}
-              <span>
-                <img className="perfil" src={perfil} alt="Filomena Diaz" />
-              </span>
+              <Account />
+              <div className="log-out">
+                <span>Log Out</span>
+                <span className="log-btn">
+                  <FaPowerOff>
+                    <Link to="/" />
+                  </FaPowerOff>
+                </span>
+              </div>
             </ul>
           </div>
         </div>
