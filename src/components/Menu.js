@@ -10,7 +10,7 @@ import {
   FaPowerOff
 } from "react-icons/fa";
 import Account from "./Account";
-import logo from "../images/logo.png";
+//import logo from "../images/logo.png";
 import { Link } from "react-router-dom";
 import perfil from "../images/perfil.png";
 
