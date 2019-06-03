@@ -24,7 +24,7 @@ class Login extends Component {
               </NavLink>
               <NavLink
                 exact
-                to="/sign-up"
+                to="/"
                 activeClassName="PageSwitcher__Item--Active"
                 className="PageSwitcher__Item"
               >
@@ -43,7 +43,7 @@ class Login extends Component {
               o{" "}
               <NavLink
                 exact
-                to="/sign-up"
+                to="/"
                 activeClassName="FormTitle__Link--Active"
                 className="FormTitle__Link"
               >
@@ -51,7 +51,7 @@ class Login extends Component {
               </NavLink>
             </div>
 
-            <Route exact path="/sign-up" component={SignUpForm} />
+            <Route exact path="/" component={SignUpForm} />
             <Route path="/sign-in" component={SignInForm} />
           </div>
         </div>

@@ -21,7 +21,7 @@ export default class Menu extends Component {
       {
         icon: <FaHome />,
         title: "Home",
-        tipo: "/home"
+        tipo: "/"
       },
       {
         icon: <FaHardHat />,
