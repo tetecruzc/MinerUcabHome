@@ -1,0 +1,35 @@
+FALTA EL CONSTRAINT FK DE TODAS LAS TABLAS\
+FALTA EL CONSTRAINT CHECK DE HORARIO(DIA DE SEMANA)
+CREATE TABLE Empleado (id_empleado serial,cedula_identidad integer NOT NULL,nombre_empleado VARCHAR(50) NOT NULL,apellido_empleado VARCHAR(50) NOT NULL,fecha_nacimiento TIMESTAMP NOT NULL, sexo CHAR(1) NOT NULL,FK_Cargo INTEGER NOT NULL,FK_Lugar INTEGER NOT NULL, CONSTRAINT check_sexo_emp CHECK(sexo in('M','F')), CONSTRAINT pk_id_empleado PRIMARY KEY(id_empleado));
+
+CREATE TABLE Persona (id_persona serial,cedula_identidad integer NOT NULL,nombre_persona VARCHAR(50) NOT NULL,apellido_persona VARCHAR(50) NOT NULL,fecha_nacimiento TIMESTAMP NOT NULL, sexo CHAR(1) NOT NULL,FK_Lugar INTEGER NOT NULL, CONSTRAINT check_sexo_pers CHECK(sexo in('M','F')), CONSTRAINT pk_id_persona PRIMARY KEY(id_persona));
+
+CREATE TABLE Empresa (id_empresa serial,rif VARCHAR(11) NOT NULL,nombre_empresa VARCHAR(50) NOT NULL,FK_Lugar INTEGER NOT NULL,CONSTRAINT pk_id_empresa PRIMARY KEY(id_empresa));
+
+CREATE TABLE Usuario (id_usuario serial,nombre_usuario VARCHAR(50) NOT NULL,contraseña VARCHAR(15) NOT NULL,FK_Empleado integer UNIQUE,FK_Empresa integer UNIQUE,FK_Rol integer NOT NULL,FK_Persona integer UNIQUE,CONSTRAINT pk_id_usuario PRIMARY KEY(id_usuario));
+
+CREATE TABLE Cargo (id_cargo serial,tipo_cargo VARCHAR(15) NOT NULL,salario_empleado NUMERIC,CONSTRAINT pk_id_cargo PRIMARY KEY(id_cargo));
+
+CREATE TABLE Permiso (id_permiso serial,nombre_permiso VARCHAR(20) NOT NULL,descripcion_permiso VARCHAR(225),CONSTRAINT pk_id_permiso PRIMARY KEY(id_permiso));
+
+———CREATE TABLE Horario (id_horario serial,hora_inicio time NOT NULL,hora_salida time NOT NULL,dia_de_semana VARCHAR(10) NOT NULL, CONSTRAINT pk_id_horario PRIMARY KEY(id_horario),CONSTRAINT check_dia_horario CHECK(dia_de_semana IN (‘lunes’,’martes’,’miércoles,’jueves’,’viernes’,’sábado’,’domingo’)));
+
+CREATE TABLE Horario (id_horario serial,hora_inicio time NOT NULL,hora_salida time NOT NULL,dia_de_semana VARCHAR(10) NOT NULL, CONSTRAINT pk_id_horario PRIMARY KEY(id_horario));
+
+CREATE TABLE Horario_Empleado (id_horario_empleado serial,FK_Empleado integer NOT NULL,FK_Horario integer NOT NULL, CONSTRAINT pk_id_horario_empleado PRIMARY KEY(id_horario_empleado),CONSTRAINT FK_hor_emp_1 FOREIGN KEY(FK_Empleado) REFERENCES Empleado(id_empleado),CONSTRAINT FK_hor_emp_2 FOREIGN KEY(FK_Horario) REFERENCES Horario(id_horario));
+
+CREATE TABLE Empleado_Fase(id_empleado_fase serial,FK_Empleado integer NOT NULL,FK_Fase integer NOT NULL, CONSTRAINT pk_id_emple_fase PRIMARY KEY(id_empleado_fase), CONSTRAINT FK_empl FOREIGN KEY(FK_Empleado) REFERENCES Empleado(id_empleado));
+
+CREATE TABLE Rol (id_rol serial,tipo_rol VARCHAR(15) NOT NULL,descripcion_rol VARCHAR(225), CONSTRAINT pk_id_rol PRIMARY KEY(id_rol));
+
+CREATE TABLE Permiso_Rol (id_permiso_rol serial,FK_Permiso integer NOT NULL,FK_Rol integer NOT NULL,CONSTRAINT pk_id_perm_rol PRIMARY KEY(id_permiso_rol),CONSTRAINT FK_perm_rol_perm FOREIGN KEY(FK_Permiso) REFERENCES Permiso(id_Permiso),CONSTRAINT FK_perm_rol_rol FOREIGN KEY(FK_Rol) REFERENCES Rol(id_Rol));
+
+CREATE TABLE Banco (id_Banco serial,nombre_banco VARCHAR(20) NOT NULL,CONSTRAINT pk_id_banco PRIMARY KEY(id_banco));
+
+CREATE TABLE Mineral_Empresa (id_mineral_empresa serial, cantidad numeric NOT NULL,FK_Mineral_Metalico integer,FK_Mineral_No_Metalico integer,FK_Empresa_Aliada integer NOT NULL,FK_Presentacion integer NOT NULl,CONSTRAINT pk_id_min_empr PRIMARY KEY(id_mineral_empresa));
+
+CREATE TABLE Compra_Cliente (id_compra_cliente serial, fecha_compra TIMESTAMP NOT NULL, monto_total_compra numeric NOT NULL,FK_Empresa integer,FK_Persona integer,CONSTRAINT pk_id_compra_cliente PRIMARY KEY(id_compra_cliente),CONSTRAINT FK_compra_cliente_emp FOREIGN KEY(FK_Empresa) REFERENCES Empresa(id_empresa),CONSTRAINT FK_compra_cliente_pers FOREIGN KEY(FK_Persona) REFERENCES Persona(id_persona));
+
+CREATE TABLE Detalle_Inventario (id_detalle_inventario serial, fecha TIMESTAMP NOT NULL, cantidad numeric NOT NULL, FK_Inventario integer NOT NULL,FK_Mineral_Metalico integer,FK_Mineral_No_Metalico integer,FK_Compra_Cliente integer UNIQUE,FK_Compra_Aliado integer UNIQUE,CONSTRAINT pk_id_detalle_inv PRIMARY KEY(id_detalle_inventario),CONSTRAINT FK_Detalle_inv_cliente FOREIGN KEY(FK_Compra_Cliente) REFERENCES Compra_Cliente(id_compra_cliente));
+
+CREATE TABLE Detalle_Compra_Cliente (id_detalle_compra_cliente serial, cantidad numeric NOT NULL,FK_Compra_Cliente integer NOT NULL, FK_Mineral_Metalico integer,FK_Mineral_No_Metalico integer,CONSTRAINT pk_id_det_compra_clien PRIMARY KEY(id_detalle_compra_cliente),CONSTRAINT FK_det_comp_cli_comp_cli FOREIGN KEY(FK_Compra_Cliente) REFERENCES Compra_Cliente(id_compra_cliente));
