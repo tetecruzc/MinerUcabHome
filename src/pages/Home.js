@@ -8,7 +8,7 @@ const Home =() => {
 return (
     <>
 <Hero hero="defaultHero">
-    <Banner title="Miner Ucab" subtitle="Loren ipsum dolor no se que poner aca aun ">
+    <Banner banner="banner" title="Miner Ucab" subtitle="Loren ipsum dolor no se que poner aca aun ">
         <Link to="/rooms" className="btn-primary">Nosotros</Link> 
     </Banner>
 </Hero>

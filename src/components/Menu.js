@@ -57,19 +57,16 @@ export default class Menu extends Component {
   render() {
     return (
       <div className="menu">
-        <div className={this.state.isOpen ? "header-show" : "header"}>
-          <button
-            type="button"
-            className="sidenav-btn"
-            onClick={this.desplegar}
-          >
-            <FaBars className="sidenav-icon" />
-          </button>
-        </div>
+              <div className={this.state.isOpen ? "header-show" : "header"}>
+                <button
+                  type="button"
+                  className="sidenav-btn"
+                  onClick={this.desplegar}>
+                  <FaBars className="sidenav-icon" />
+                </button>
+              </div>
         <div className="sidenav">
-          <div
-            className={this.state.isOpen ? "sidenav-show" : "sidenav-noshow"}
-          >
+          <div className={this.state.isOpen ? "sidenav-show" : "sidenav-noshow"}>
             <ul>
               {this.state.option.map((item, index) => {
                 return (
