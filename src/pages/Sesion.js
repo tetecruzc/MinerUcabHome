@@ -7,7 +7,7 @@ import {
   Switch
 } from "react-router-dom";
 import Menu from "../components/Menu";
-import MenuCRUD from "../components/MenuCRUD";
+import MenuCrud from "../components/MenuCrud";
 import Empleado from "./Empleado";
 import Home from "./Home";
 
@@ -16,7 +16,7 @@ const Sesion = () => {
     <Router basename="/sesion/">
       <Route exact path="/" component={Home} />
       <Menu />
-      <MenuCRUD />
+      <MenuCrud />
       <Route path="/empleados" component={Empleado} />
     </Router>
   );

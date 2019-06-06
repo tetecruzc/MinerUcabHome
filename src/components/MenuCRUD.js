@@ -1,44 +1,43 @@
 import React, { Component } from "react";
-import { FaHome } from "react-icons/fa";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-import "../styles/MenuCRUD.css";
+import {
+  Tabs,
+  Tab,
+  Grid,
+  Cell,
+  Card,
+  CardTitle,
+  CardText,
+  CardActions,
+  Button,
+  CardMenu,
+  IconButton
+} from "react-mdl";
 
-export default class MenuCRUD extends Component {
-  state = {
-    isOpen: false,
-    option: [
-      {
-        icon: <FaHome />,
-        title: "Ingresar"
-      },
-      {
-        icon: <FaHome />,
-        title: "Consultar"
-      }
-    ]
-  };
+export default class MenuCrud extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { activeTab: 2 };
+  }
 
   render() {
     return (
-      <Tabs className="tabs">
-        <TabList>
-          {this.state.option.map((item, index) => {
-            return (
-              <Tab key={index}>
-                <span>{item.icon}</span>
-                <span>{item.title}</span>
-              </Tab>
-            );
-          })}
-        </TabList>
-        <TabPanel>
-          <h2>HOLAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h2>
-        </TabPanel>
-        <TabPanel>
-          <h2>HOLAAAAAAAAAAAdasfdsfghyhjtyjthjAAAAA</h2>
-        </TabPanel>
-      </Tabs>
+      <div className="demo-tabs">
+        <Tabs
+          activeTab={this.state.activeTab}
+          onChange={tabId => this.setState({ activeTab: tabId })}
+          ripple
+        >
+          <Tab>Starks</Tab>
+          <Tab>Lannisters</Tab>
+          <Tab>Targaryens</Tab>
+        </Tabs>
+        <section>
+          <div className="content">
+            Content for the tab: {this.state.activeTab}
+          </div>
+        </section>
+      </div>
     );
   }
 }

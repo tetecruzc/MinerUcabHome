@@ -10,7 +10,6 @@ class Login extends Component {
   render() {
     return (
       <Router basename="/login/">
-        <Route path="/sesion" component={Sesion} />
         <div className="Login">
           <div className="Login__Aside" />
           <div className="Login__Form">
