@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.nosotros-grid{
+  display: flex;
+}
 :root {
   --primaryColor: #af9a7d;
   --mainWhite: #fff;
@@ -191,13 +194,14 @@ h6 {
   justify-content: center;
 }
 .roomsHero {
+  height: 100px;
   background-image: url("../src/images/industria2.jpg");
-  min-height: 60vh;
+ /* min-height: 60vh;*/
 }
 /* End of Hero */
 
 /* Banner */
-.banner {
+.banner{
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
   color: var(--mainWhite);
@@ -206,6 +210,7 @@ h6 {
   text-transform: capitalize;
   letter-spacing: var(--mainSpacing);
 }
+
 .banner h1 {
   font-size: 2.5rem;
 }
@@ -274,7 +279,7 @@ h6 {
 .service span {
   display: inline-block;
   color: var(--primaryColor);
-  font-size: 2.5rem;
+  font-size: 5rem;
   margin-bottom: 1.5rem;
 }
 .services h6 {
@@ -302,7 +307,45 @@ h6 {
     padding: 5rem 0;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  .featured-rooms-center {
+ 
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* MAQUINARIA*/
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+.nosotros-grid{
+  align-items: center;
+  display: grid;
+  padding: 10px 10px;
+}
+.column {
+  float: left;
+  padding: 20px 20px;
+  width: 25%;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.6);
+}
+.card img{
+width:100%;
+
+height: 200px;
+}
+.container {
+  padding: 2px 16px;
+}
+@media screen and (max-width: 776px) {
+  .column {
+    width: 50%;
+    margin-bottom: 20px;
+  }
+}
+
+
+  .featured-rooms-center{
     width: 100%;
     margin: 0 auto;
     display: grid;
@@ -311,13 +354,13 @@ h6 {
     grid-column-gap: 40px;
   }
   @media screen and (min-width: 776px) {
-    .featured-rooms-center {
+    .featured-rooms-center{
       width: 90vw;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
   }
   @media screen and (min-width: 992px) {
-    .featured-rooms-center {
+    .featured-rooms-center{
       width: 95vw;
       max-width: 1170px;
     }

@@ -7,7 +7,7 @@ import Sesion from "./pages/Sesion";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import { Route, Switch } from "react-router-dom";
-import Rooms from "./pages/Proxima";
+import Nosotros from "./pages/Nosotros";
 
 import { isLogicalExpression } from "@babel/types";
 
@@ -20,6 +20,11 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
+<<<<<<< HEAD
+=======
+        <Route exact path="/login/" component={Login} />
+        <Route exact path="/nosotros/" component={Nosotros} />
+>>>>>>> 9af46a589a587e4fca6e32744544cd2b714d3e3d
         <Route exact path="/sesion/" component={Sesion} />
         <Route exact path="/login/" component={Login} />
         <Route exact path="/proxima" component={Rooms} />
