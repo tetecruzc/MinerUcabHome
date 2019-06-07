@@ -9,7 +9,7 @@ return (
     <>
 <Hero hero="defaultHero">
     <Banner banner="banner" title="Miner Ucab" subtitle="Loren ipsum dolor no se que poner aca aun ">
-        <Link to="/rooms" className="btn-primary">Nosotros</Link> 
+        <Link to="/nosotros" className="btn-primary">Nosotros</Link> 
     </Banner>
 </Hero>
 <Services/>

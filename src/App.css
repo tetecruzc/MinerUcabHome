@@ -342,7 +342,11 @@ height: 200px;
     margin-bottom: 20px;
   }
 }
-
+@media screen and (max-width: 1000px) {
+  .column {
+   font-size: 1.2rem;
+  }
+}
 
   .featured-rooms-center{
     width: 100%;
