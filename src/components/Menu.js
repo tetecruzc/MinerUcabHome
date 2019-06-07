@@ -12,11 +12,18 @@ import Account from "./Account";
 import LogOut from "./LogOut";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
 import perfil from "../images/perfil.png";
+import MenuCrud from "./MenuCrud";
+import "../styles/Menu.css";
 
 // link de react-icons https://react-icons.netlify.com/#/icons/fa
 export default class Menu extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   state = {
     isOpen: false,
+    crud: this.props.crud,
     option: [
       {
         icon: <FaHome />,
@@ -26,17 +33,17 @@ export default class Menu extends Component {
       {
         icon: <FaHardHat />,
         title: "Empleados",
-        tipo: "/empleado"
+        tipo: "/empleados"
       },
       {
         icon: <FaHammer />,
         title: "Yacimientos",
-        tipo: "/yacimiento"
+        tipo: "/yacimientos"
       },
       {
         icon: <FaUser />,
         title: "Clientes",
-        tipo: "/cliente"
+        tipo: "/clientes"
       },
       {
         icon: <FaBoxOpen />,
@@ -57,16 +64,20 @@ export default class Menu extends Component {
   render() {
     return (
       <div className="menu">
-              <div className={this.state.isOpen ? "header-show" : "header"}>
-                <button
-                  type="button"
-                  className="sidenav-btn"
-                  onClick={this.desplegar}>
-                  <FaBars className="sidenav-icon" />
-                </button>
-              </div>
+        <div className={this.state.isOpen ? "header-show" : "header"}>
+          <button
+            type="button"
+            className="sidenav-btn"
+            onClick={this.desplegar}
+          >
+            <FaBars className="sidenav-icon" />
+          </button>
+          <MenuCrud />
+        </div>
         <div className="sidenav">
-          <div className={this.state.isOpen ? "sidenav-show" : "sidenav-noshow"}>
+          <div
+            className={this.state.isOpen ? "sidenav-show" : "sidenav-noshow"}
+          >
             <ul>
               {this.state.option.map((item, index) => {
                 return (

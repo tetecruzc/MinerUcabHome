@@ -1,18 +1,7 @@
 import React, { Component } from "react";
 import { HashRouter as Router, Route, Link, NavLink } from "react-router-dom";
-import {
-  Tabs,
-  Tab,
-  Grid,
-  Cell,
-  Card,
-  CardTitle,
-  CardText,
-  CardActions,
-  Button,
-  CardMenu,
-  IconButton
-} from "react-mdl";
+import { Tabs, Tab } from "react-mdl";
+import "../styles/MenuCRUD.css";
 
 export default class MenuCrud extends Component {
   constructor(props) {
@@ -28,9 +17,8 @@ export default class MenuCrud extends Component {
           onChange={tabId => this.setState({ activeTab: tabId })}
           ripple
         >
-          <Tab>Starks</Tab>
-          <Tab>Lannisters</Tab>
-          <Tab>Targaryens</Tab>
+          <Tab>holla></Tab>
+          <Tab>holaaa3333333</Tab>
         </Tabs>
         <section>
           <div className="content">
