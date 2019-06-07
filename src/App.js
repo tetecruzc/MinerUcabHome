@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import "./styles/Menu.css";
 import Home from "./pages/Home";
 import Error from "./pages/Error";
 import Sesion from "./pages/Sesion";
@@ -20,9 +19,8 @@ function App() {
       <Navbar />
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/login/" component={Login} />
         <Route exact path="/nosotros/" component={Nosotros} />
-        <Route exact path="/sesion/" component={Sesion} />
+        <Route exact path="/login/" component={Login} />
         <Route component={Error} />
       </Switch>
     </>

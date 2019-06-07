@@ -1,7 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
+import {
+  HashRouter as Router,
+  Route,
+  Link,
+  NavLink,
+  Switch
+} from "react-router-dom";
+import Empleado from "./Empleado";
 import Menu from "../components/Menu";
-const Sesion = () => {
-  return <Menu />;
-};
+
+class Sesion extends Component {
+  render() {
+    return <Menu />;
+  }
+}
 
 export default Sesion;

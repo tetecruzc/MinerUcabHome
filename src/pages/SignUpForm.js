@@ -38,6 +38,8 @@ class SignUpForm extends Component {
 
   render() {
     return (
+      <>
+      
       <div className="FormCenter">
         <form onSubmit={this.handleSubmit} className="FormFields">
           <div className="FormField">
@@ -149,6 +151,7 @@ class SignUpForm extends Component {
           </div>
         </form>
       </div>
+      </>
     );
   }
 }
