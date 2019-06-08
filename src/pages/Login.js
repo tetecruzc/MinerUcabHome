@@ -13,16 +13,21 @@ import Empleado from "./Empleado";
 import Yacimientos from "./Yacimientos";
 
 import "../Login.css";
+import Home from "./Home";
+import Navbar from "../components/Navbar";
 
 class Login extends Component {
   render() {
+    
     return (
+    
+      <>
       <Router basename="/login/">
         <Switch>
           <Route exact path="/sesion" component={Sesion} />
           <Route path="/empleados" component={Empleado} />
           <Route path="/yacimientos" component={Yacimientos} />
-
+          <Route path="/home" component={Home}></Route>
           <div className="Login">
             <div className="Login__Aside" />
             <div className="Login__Form">
@@ -69,6 +74,7 @@ class Login extends Component {
           </div>
         </Switch>
       </Router>
+      </>
     );
   }
 }

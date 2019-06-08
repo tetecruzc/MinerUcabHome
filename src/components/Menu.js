@@ -52,7 +52,7 @@ export default class Menu extends Component {
       },
       {
         icon: <FaBook />,
-        title: "Información Reelevante",
+        title: "Información Relevante",
         tipo: "/info"
       }
     ]
@@ -72,7 +72,7 @@ export default class Menu extends Component {
           >
             <FaBars className="sidenav-icon" />
           </button>
-          <MenuCrud />
+          <MenuCrud crud={this.props.crud}/>
         </div>
         <div className="sidenav">
           <div

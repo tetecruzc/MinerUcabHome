@@ -4,9 +4,11 @@ import Banner from "../components/Banner";
 import { Link } from "react-router-dom";
 import Services from "../components/Services";
 import Minerales from "../components/Minerales";
+import Navbar from "../components/Navbar";
 const Home = () => {
   return (
     <>
+    <Navbar/>
       <Hero hero="defaultHero">
         <Banner
           banner="banner"

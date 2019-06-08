@@ -16,7 +16,7 @@ import { isLogicalExpression } from "@babel/types";
 function App() {
   return (
     <>
-      <Navbar />
+      
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/nosotros/" component={Nosotros} />

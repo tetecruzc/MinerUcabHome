@@ -7,14 +7,12 @@ body {
 .header {
   position: absolute;
   height: 65px;
-  width: 100%;
   z-index: 4;
   background-color: rgb(216, 146, 16);
 }
 .header-show {
   position: absolute;
   height: 65px;
-  width: 100%;
   margin-left: 250px;
   background-color: rgb(216, 146, 16);
   z-index: 4;
@@ -23,7 +21,7 @@ body {
 .sidenav {
   position: absolute;
   border-left-color: black;
-  height: 100%;
+  height: cover;
   background: #1b1e20;
   z-index: 3;
 }

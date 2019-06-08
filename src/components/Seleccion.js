@@ -18,6 +18,7 @@ import img13 from '../images/Guarico.jpg';
 import img14 from '../images/twitter.png';
 import img15 from '../images/insta.png';
 import img16 from '../images/face.png';
+import img17 from '../images/wha.jpg'
 import {Tabs,Tab,Grid,Cell,Card,CardTitle,CardText,CardActions,Button,CardMenu,IconButton} from 'react-mdl';
 //import img1 from "../images/bauxita.jpg";
 //import Title from "../components/Title";
@@ -165,6 +166,14 @@ class seleccion extends Component{
               <img  src={img16} alt="Avatar" />
               <div class="container">
                 <h6><b>Miner Ucab C.A</b></h6> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="card">
+              <img  src={img17} alt="Avatar" />
+              <div class="container">
+                <h6><b>+584141221422</b></h6> 
               </div>
             </div>
           </div>

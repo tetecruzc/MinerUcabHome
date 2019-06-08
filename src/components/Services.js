@@ -34,6 +34,7 @@ export default class Services extends Component{
             <Title title="Objetivos"> </Title>
             <div className="services-center">
                 { this.state.services.map((item,index)=> { 
+                    
                     return <article key={index} className="service">
                             <span className={item.icon}/>
                             <h6>{item.title}</h6>

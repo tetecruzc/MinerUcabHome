@@ -9,7 +9,7 @@ export default class LogOut extends Component {
         <span>Log Out</span>
         <span className="log-btn">
           <FaPowerOff>
-            <Link to="/" />
+            <Link to="" />
           </FaPowerOff>
         </span>
       </div>
