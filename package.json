@@ -28,6 +28,7 @@
     "create-react-app": "^3.0.1",
     "express": "^4.17.1",
     "pg": "^7.11.0",
-    "react-mdl": "^1.11.0"
+    "react-mdl": "^1.11.0",
+    "react-tabs": "^3.0.0"
   }
 }
